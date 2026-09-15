@@ -1,7 +1,7 @@
 from django import forms
 
 TYPE_CHOICES = [
-    ('restaurant', 'Restaurant'),
+    ('restaurant', 'Ресторан'),
     ('cafe', 'Кафе'),
     ('bar', 'Бак'),
     ('attraction', 'Атракціони'),
