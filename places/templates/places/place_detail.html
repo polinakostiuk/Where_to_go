@@ -1,0 +1,29 @@
+{% extends 'places/base.html' %}
+{% load static %}
+
+{% block title %}{{ place.title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-lg">
+    <img src="{% static 'places/images/default_place.png' %}" class="card-img-top" alt="Фото"
+        style="max-height: 350px; object-fit: cover;">
+    <div class="card-body">
+        <h2>{{ place.title }}</h2>
+        <hr>
+        <p><strong>Опис місця:</strong> {{ place.description }}</p>
+        <p><strong>Тип місця:</strong> {{ place.place_type }}</p>
+        <p><strong>Локація:</strong>
+            {% if place.location %}
+            {{ place.location }}
+            {% else %}
+            <span class="badge bg-secondary">Secret place👀</span>
+            {% endif %}
+        </p>
+        <p><strong>Рейтинг:</strong>
+            {% for i in "12345" %}
+            {% if forloop.counter <= place.rating %}★{% else %}☆{% endif %} {% endfor %} </p>
+                <p class="text-muted">Дата створення відгуку: {{ place.created_at }}</p>
+                <a href="{% url 'place_list' %}" class="btn btn-outline-secondary">← Назад до списку</a>
+    </div>
+</div>
+{% endblock %}
