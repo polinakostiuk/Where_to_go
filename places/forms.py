@@ -17,9 +17,9 @@ class PlaceForm(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Наприклад: Кав’ярня біля дому'}) 
     )
     description = forms.CharField(
-        label="Повний опис", 
-        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
-        required=True
+        label="Опис місця", 
+        required=True,
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Наприклад: Дуже затишна атмосфера', 'rows': 4}) 
     )
     place_type = forms.ChoiceField(
         label="Тип місця", 
